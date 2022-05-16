@@ -13,6 +13,10 @@ public class TrainSystem {
 	private TrainUser user = new TrainUserImpl(controller);
 	private TrainSensor sensor = new TrainSensorImpl(controller, user);
 
+	public TrainSystem(){
+		controller.start();
+	}
+
 	public TrainController getController() {
 		return controller;
 	}
