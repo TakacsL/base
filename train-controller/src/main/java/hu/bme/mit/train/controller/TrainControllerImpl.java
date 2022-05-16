@@ -8,7 +8,6 @@ public class TrainControllerImpl implements TrainController extends Thread{
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
 
-
 	@Override
 	public void followSpeed() {
 		if (referenceSpeed < 0) {
@@ -31,7 +30,8 @@ public class TrainControllerImpl implements TrainController extends Thread{
             System.out.println(
                 "Thread " + Thread.currentThread().getId()
                 + " is running");
-			this.followSpeed(); }
+			this.followSpeed(); 
+			this.sleep(10);  }
         catch (Exception e) {
             // Throwing an exception
             System.out.println("Exception is caught");
