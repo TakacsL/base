@@ -2,11 +2,15 @@ package hu.bme.mit.train.controller;
 
 import hu.bme.mit.train.interfaces.TrainController;
 
-public class TrainControllerImpl implements TrainController {
+public class TrainControllerImpl implements TrainController extends Thread{
 
 	private int step = 0;
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
+
+	public TrainController(){
+
+	}
 
 	@Override
 	public void followSpeed() {
@@ -22,6 +26,19 @@ public class TrainControllerImpl implements TrainController {
 
 		enforceSpeedLimit();
 	}
+
+	public void run()
+    {
+        try {
+            System.out.println(
+                "Thread " + Thread.currentThread().getId()
+                + " is running");
+			this.followSpeed();
+        }
+        catch (Exception e) {
+            System.out.println("Exception is caught");
+        }
+    }
 
 	@Override
 	public int getReferenceSpeed() {
