@@ -27,15 +27,17 @@ public class TrainControllerImpl implements TrainController extends Thread{
 		enforceSpeedLimit();
 	}
 
-	public void run()
+	 public void run()
     {
         try {
+            // Displaying the thread that is running
             System.out.println(
                 "Thread " + Thread.currentThread().getId()
                 + " is running");
-			this.followSpeed();
-        }
+			this.followSpeed(); 
+			this.sleep(10);  }
         catch (Exception e) {
+            // Throwing an exception
             System.out.println("Exception is caught");
         }
     }
