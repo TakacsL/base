@@ -31,6 +31,7 @@ public class TrainControllerImpl implements TrainController extends Thread{
                 "Thread " + Thread.currentThread().getId()
                 + " is running");
 			this.followSpeed();
+			this.sleep(10); 
         }
         catch (Exception e) {
             // Throwing an exception
